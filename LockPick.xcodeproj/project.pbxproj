@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5C32C2FB1C0415830020F654 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C2FA1C0415830020F654 /* AppDelegate.swift */; };
-		5C32C2FD1C0415830020F654 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C2FC1C0415830020F654 /* ViewController.swift */; };
 		5C32C3001C0415830020F654 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C32C2FE1C0415830020F654 /* Main.storyboard */; };
 		5C32C3021C0415830020F654 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C32C3011C0415830020F654 /* Images.xcassets */; };
 		5C32C3051C0415830020F654 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C32C3031C0415830020F654 /* LaunchScreen.xib */; };
 		5C32C3111C0415830020F654 /* LockPickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C3101C0415830020F654 /* LockPickTests.swift */; };
+		5C32C31B1C041BDB0020F654 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C31A1C041BDB0020F654 /* CalculatorViewController.swift */; };
+		5C32C31D1C0D33510020F654 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C31C1C0D33510020F654 /* PhotoLibraryViewController.swift */; };
+		5C32C3211C0FCB490020F654 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C3201C0FCB490020F654 /* PhotoCollectionViewCell.swift */; };
+		5C32C3231C0FDDD10020F654 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C3221C0FDDD10020F654 /* SetPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +32,16 @@
 		5C32C2F51C0415830020F654 /* LockPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C32C2F91C0415830020F654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C32C2FA1C0415830020F654 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C32C2FC1C0415830020F654 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5C32C2FF1C0415830020F654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C32C3011C0415830020F654 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5C32C3041C0415830020F654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5C32C30A1C0415830020F654 /* LockPickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LockPickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C32C30F1C0415830020F654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C32C3101C0415830020F654 /* LockPickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockPickTests.swift; sourceTree = "<group>"; };
+		5C32C31A1C041BDB0020F654 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		5C32C31C1C0D33510020F654 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
+		5C32C3201C0FCB490020F654 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		5C32C3221C0FDDD10020F654 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 		5C32C2EC1C0415830020F654 = {
 			isa = PBXGroup;
 			children = (
+				5C32C3221C0FDDD10020F654 /* SetPasswordViewController.swift */,
 				5C32C2F71C0415830020F654 /* LockPick */,
 				5C32C30D1C0415830020F654 /* LockPickTests */,
 				5C32C2F61C0415830020F654 /* Products */,
@@ -78,8 +85,10 @@
 			isa = PBXGroup;
 			children = (
 				5C32C2FA1C0415830020F654 /* AppDelegate.swift */,
-				5C32C2FC1C0415830020F654 /* ViewController.swift */,
+				5C32C31A1C041BDB0020F654 /* CalculatorViewController.swift */,
+				5C32C31C1C0D33510020F654 /* PhotoLibraryViewController.swift */,
 				5C32C2FE1C0415830020F654 /* Main.storyboard */,
+				5C32C3201C0FCB490020F654 /* PhotoCollectionViewCell.swift */,
 				5C32C3011C0415830020F654 /* Images.xcassets */,
 				5C32C3031C0415830020F654 /* LaunchScreen.xib */,
 				5C32C2F81C0415830020F654 /* Supporting Files */,
@@ -212,8 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C32C2FD1C0415830020F654 /* ViewController.swift in Sources */,
+				5C32C31B1C041BDB0020F654 /* CalculatorViewController.swift in Sources */,
+				5C32C3211C0FCB490020F654 /* PhotoCollectionViewCell.swift in Sources */,
 				5C32C2FB1C0415830020F654 /* AppDelegate.swift in Sources */,
+				5C32C31D1C0D33510020F654 /* PhotoLibraryViewController.swift in Sources */,
+				5C32C3231C0FDDD10020F654 /* SetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
