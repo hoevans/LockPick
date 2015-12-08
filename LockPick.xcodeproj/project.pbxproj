@@ -41,7 +41,7 @@
 		5C32C31A1C041BDB0020F654 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		5C32C31C1C0D33510020F654 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
 		5C32C3201C0FCB490020F654 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
-		5C32C3221C0FDDD10020F654 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
+		5C32C3221C0FDDD10020F654 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetPasswordViewController.swift; path = ../SetPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,6 @@
 		5C32C2EC1C0415830020F654 = {
 			isa = PBXGroup;
 			children = (
-				5C32C3221C0FDDD10020F654 /* SetPasswordViewController.swift */,
 				5C32C2F71C0415830020F654 /* LockPick */,
 				5C32C30D1C0415830020F654 /* LockPickTests */,
 				5C32C2F61C0415830020F654 /* Products */,
@@ -86,6 +85,7 @@
 			children = (
 				5C32C2FA1C0415830020F654 /* AppDelegate.swift */,
 				5C32C31A1C041BDB0020F654 /* CalculatorViewController.swift */,
+				5C32C3221C0FDDD10020F654 /* SetPasswordViewController.swift */,
 				5C32C31C1C0D33510020F654 /* PhotoLibraryViewController.swift */,
 				5C32C2FE1C0415830020F654 /* Main.storyboard */,
 				5C32C3201C0FCB490020F654 /* PhotoCollectionViewCell.swift */,

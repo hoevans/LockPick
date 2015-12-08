@@ -29,6 +29,8 @@ class PhotoLibraryViewController: UIViewController, UIImagePickerControllerDeleg
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("goback"), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,9 +38,14 @@ class PhotoLibraryViewController: UIViewController, UIImagePickerControllerDeleg
         // Dispose of any resources that can be recreated.
     }
     
+    func goback(){
+        self.dismissViewControllerAnimated(false, completion: { () -> Void in
+            
+        })
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage info: [NSObject : AnyObject]!) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImageView {
-            
             
             
             

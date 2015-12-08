@@ -13,11 +13,18 @@ class CalculatorViewController: UIViewController {
     var Math = 0;
     var total = 0;
     var number = 0;
+    var password = ""
     
     @IBOutlet weak var screen: UILabel!
     
     
     @IBAction func click0(sender: AnyObject) {
+        
+        var tempNum = number
+        tempNum = tempNum * 10
+        let x : Int = tempNum
+        screen.text = String(x)
+        number = x
         
     }
     @IBAction func click1(sender: AnyObject) {
@@ -310,6 +317,7 @@ class CalculatorViewController: UIViewController {
         
         
         
+        
     }
     @IBAction func allClear(sender: AnyObject) {
         
@@ -319,11 +327,19 @@ class CalculatorViewController: UIViewController {
         let x : Int = total
         screen.text = String(x)
         
+        self.performSegueWithIdentifier("to3rd", sender: nil)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if password == "" {
+            
+            performSegueWithIdentifier("setPassword", sender: password)
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -332,14 +348,24 @@ class CalculatorViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "setPassword" {
+            
+            if let vc = segue.destinationViewController as? SetPasswordViewController {
+                vc.setPassword = password as String
+                
+            }
+            
+        }
+        
+        
     }
-    */
+    
 
 }
