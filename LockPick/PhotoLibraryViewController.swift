@@ -10,6 +10,12 @@ import UIKit
 
 class PhotoLibraryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
+    enum defaultsKeys {
+        
+        static let keyTwo: [UIImage] = []
+        
+    }
+    
     let imagePicker = UIImagePickerController()
     var images: [UIImage] = []
     var clickedImage: UIImage? = nil
