@@ -10,10 +10,29 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
     
+    enum defaultsKeys {
+        
+        static let keyOne = "password"
+        
+    }
+    
+    
     var Math = 0;
     var total = 0;
     var number = 0;
     var password = ""
+    
+//    @IBAction func unwindToVC(segue: UIStoryboardSegue) {
+//        if(segue.sourceViewController .isKindOfClass(SetPasswordViewController))
+//        {
+//            var view2:SetPasswordViewController = segue.sourceViewController as! SetPasswordViewController
+//            
+//            password = view2.passwordField.text
+//            
+//        }
+//        
+//    }
+    
     
     @IBOutlet weak var screen: UILabel!
     
@@ -128,7 +147,15 @@ class CalculatorViewController: UIViewController {
             switch Math {
             
             case 1:
-                total = total / number
+                if number == 0 {
+                    
+                    screen.text = "ERROR"
+                    
+                } else {
+                    
+                    total = total / number
+                    
+                }
                 break
                 
             case 2:
@@ -141,6 +168,9 @@ class CalculatorViewController: UIViewController {
                 
             case 4:
                 total = total + number
+                break
+                
+            case 5:
                 break
                 
                 
@@ -168,7 +198,15 @@ class CalculatorViewController: UIViewController {
             switch Math {
                 
             case 1:
-                total = total / number
+                if number == 0 {
+                    
+                    screen.text = "ERROR"
+                    
+                } else {
+                    
+                    total = total / number
+                    
+                }
                 break
                 
             case 2:
@@ -181,6 +219,9 @@ class CalculatorViewController: UIViewController {
                 
             case 4:
                 total = total + number
+                break
+                
+            case 5:
                 break
                 
                 
@@ -208,7 +249,15 @@ class CalculatorViewController: UIViewController {
             switch Math {
                 
             case 1:
-                total = total / number
+                if number == 0 {
+                    
+                    screen.text = "ERROR"
+                    
+                } else {
+                    
+                    total = total / number
+                    
+                }
                 break
                 
             case 2:
@@ -221,6 +270,9 @@ class CalculatorViewController: UIViewController {
                 
             case 4:
                 total = total + number
+                break
+                
+            case 5:
                 break
                 
                 
@@ -247,7 +299,16 @@ class CalculatorViewController: UIViewController {
             switch Math {
                 
             case 1:
-                total = total / number
+                if number == 0 {
+                    
+                    screen.text = "ERROR"
+                    
+                    
+                } else {
+                    
+                    total = total / number
+                    
+                }
                 break
                 
             case 2:
@@ -260,6 +321,9 @@ class CalculatorViewController: UIViewController {
                 
             case 4:
                 total = total + number
+                break
+                
+            case 5:
                 break
                 
                 
@@ -279,6 +343,14 @@ class CalculatorViewController: UIViewController {
     }
     @IBAction func Equals(sender: AnyObject) {
         
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if screen.text == defaults.stringForKey(defaultsKeys.keyOne) {
+            
+            self.performSegueWithIdentifier("to3rd", sender: nil)
+            
+        }
+        
         if total == 0 {
             
             total = number
@@ -288,7 +360,15 @@ class CalculatorViewController: UIViewController {
             switch Math {
                 
             case 1:
-                total = total / number
+                if number == 0 {
+                    
+                    screen.text = "ERROR"
+                    
+                } else {
+                    
+                    total = total / number
+                    
+                }
                 break
                 
             case 2:
@@ -303,6 +383,10 @@ class CalculatorViewController: UIViewController {
                 total = total + number
                 break
                 
+            case 5:
+                
+                break
+                
                 
             default:
                 break
@@ -313,9 +397,8 @@ class CalculatorViewController: UIViewController {
         let x : Int = total
         screen.text = String(x)
         number = 0
-        total = 0
         
-        
+        Math = 5
         
         
     }
@@ -327,7 +410,7 @@ class CalculatorViewController: UIViewController {
         let x : Int = total
         screen.text = String(x)
         
-        self.performSegueWithIdentifier("to3rd", sender: nil)
+        
         
     }
     override func viewDidLoad() {
@@ -335,11 +418,21 @@ class CalculatorViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        if password == "" {
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        let x : Int = 0
+        screen.text = String(x)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if (defaults.valueForKey(defaultsKeys.keyOne) == nil) {
             
-            performSegueWithIdentifier("setPassword", sender: password)
-            
+            performSegueWithIdentifier("setPassword", sender: nil)
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -348,24 +441,18 @@ class CalculatorViewController: UIViewController {
     }
     
 
-    
+/*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "setPassword" {
-            
-            if let vc = segue.destinationViewController as? SetPasswordViewController {
-                vc.setPassword = password as String
-                
-            }
-            
-        }
+        
         
         
     }
-    
+
+ */   
 
 }

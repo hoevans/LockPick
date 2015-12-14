@@ -16,6 +16,7 @@
 		5C32C31D1C0D33510020F654 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C31C1C0D33510020F654 /* PhotoLibraryViewController.swift */; };
 		5C32C3211C0FCB490020F654 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C3201C0FCB490020F654 /* PhotoCollectionViewCell.swift */; };
 		5C32C3231C0FDDD10020F654 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32C3221C0FDDD10020F654 /* SetPasswordViewController.swift */; };
+		5CC896C01C19F816005E2BCE /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC896BF1C19F816005E2BCE /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		5C32C31C1C0D33510020F654 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
 		5C32C3201C0FCB490020F654 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		5C32C3221C0FDDD10020F654 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetPasswordViewController.swift; path = ../SetPasswordViewController.swift; sourceTree = "<group>"; };
+		5CC896BF1C19F816005E2BCE /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				5C32C3221C0FDDD10020F654 /* SetPasswordViewController.swift */,
 				5C32C31C1C0D33510020F654 /* PhotoLibraryViewController.swift */,
 				5C32C2FE1C0415830020F654 /* Main.storyboard */,
+				5CC896BF1C19F816005E2BCE /* PhotoViewController.swift */,
 				5C32C3201C0FCB490020F654 /* PhotoCollectionViewCell.swift */,
 				5C32C3011C0415830020F654 /* Images.xcassets */,
 				5C32C3031C0415830020F654 /* LaunchScreen.xib */,
@@ -226,6 +229,7 @@
 				5C32C2FB1C0415830020F654 /* AppDelegate.swift in Sources */,
 				5C32C31D1C0D33510020F654 /* PhotoLibraryViewController.swift in Sources */,
 				5C32C3231C0FDDD10020F654 /* SetPasswordViewController.swift in Sources */,
+				5CC896C01C19F816005E2BCE /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +425,7 @@
 				5C32C3161C0415830020F654 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C32C3171C0415830020F654 /* Build configuration list for PBXNativeTarget "LockPickTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +434,7 @@
 				5C32C3191C0415830020F654 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

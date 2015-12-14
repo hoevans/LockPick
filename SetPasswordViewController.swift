@@ -10,20 +10,35 @@ import UIKit
 
 class SetPasswordViewController: UIViewController {
     
-    var setPassword = ""
-    
+    enum defaultsKeys {
+        
+        static let keyOne = "password"
+        
+    }
 
     @IBOutlet weak var passwordField: UITextField!
     
     @IBAction func enterPressed(sender: AnyObject) {
-//        NSUserDefaults.standardUserDefaults().setValue(passwordField.text, forKey: "password")
-//        self.performSegueWithIdentifier("to2nd", sender: passwordField.text)
         
-        //var initial = false
+        if count(passwordField.text) == 4{
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(passwordField.text, forKey: defaultsKeys.keyOne)
+            dismissViewControllerAnimated(true, completion: nil)
+            
+        } else {
+            
+            let alertController = UIAlertController(title: "Hey, you can't do that!", message: "Must Enter a 4 digit numerical code", preferredStyle: .Alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            presentViewController(alertController, animated: true, completion: nil)
+            
+        }
         
-        setPassword = passwordField.text
-        dismissViewControllerAnimated(true, completion: nil)
-    
+        
+        
     }
     
     override func viewDidLoad() {
@@ -31,13 +46,7 @@ class SetPasswordViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-       
-//        if (NSUserDefaults.standardUserDefaults().valueForKey("password") != nil){
-//            self.performSegueWithIdentifier("to2nd", sender: passwordField.text)
-//        }
+        passwordField.keyboardType = UIKeyboardType.NumberPad
         
     }
 
@@ -49,17 +58,13 @@ class SetPasswordViewController: UIViewController {
     
     
     
-
+/*
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "to2nd" {
-            if let vc = segue.destinationViewController as? CalculatorViewController{
-                vc.password = (sender as? String)!
-            }
-        }
     }
+*/
 
 }
