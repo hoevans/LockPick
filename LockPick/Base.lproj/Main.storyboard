@@ -92,7 +92,7 @@
         <!--Calculator View Controller-->
         <scene sceneID="Jny-em-ILR">
             <objects>
-                <viewController id="HlQ-1W-LLK" customClass="CalculatorViewController" customModule="LockPick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Calc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HlQ-1W-LLK" customClass="CalculatorViewController" customModule="LockPick" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z4J-ZH-UHJ"/>
                         <viewControllerLayoutGuide type="bottom" id="RaT-gp-SNx"/>
@@ -489,7 +489,7 @@
                     <connections>
                         <outlet property="photoLibrary" destination="AjV-iX-CRo" id="UhT-hh-AEz"/>
                         <segue destination="7LY-oW-7yX" kind="presentation" identifier="resetPassword" id="u7M-wv-XfV"/>
-                        <segue destination="36F-EN-Zsy" kind="presentation" identifier="toViewPhoto" id="11b-Qd-zQB"/>
+                        <segue destination="36F-EN-Zsy" kind="show" identifier="toViewPhoto" id="V35-7v-Y2g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RS-cE-09G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -521,9 +521,20 @@
                                     <action selector="doneViewing:" destination="36F-EN-Zsy" eventType="touchUpInside" id="z82-e2-Mlw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8a-hW-53z">
+                                <rect key="frame" x="504" y="28" width="80" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="DELETE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deletePhoto:" destination="36F-EN-Zsy" eventType="touchUpInside" id="bBr-XK-vPa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GVa-hz-SPp" secondAttribute="trailing" constant="16" id="2VM-AK-Hke"/>
                             <constraint firstAttribute="trailing" secondItem="GVa-hz-SPp" secondAttribute="trailing" constant="16" id="8vb-Io-Zge"/>
                             <constraint firstItem="FUn-gp-fHR" firstAttribute="top" secondItem="GVa-hz-SPp" secondAttribute="bottom" constant="20" id="ANk-LG-a8m"/>
                             <constraint firstItem="FUn-gp-fHR" firstAttribute="top" secondItem="GVa-hz-SPp" secondAttribute="bottom" constant="75" id="BjR-3B-YIx"/>
@@ -535,17 +546,24 @@
                             <constraint firstItem="GVa-hz-SPp" firstAttribute="leading" secondItem="try-CJ-4qq" secondAttribute="leading" constant="16" id="Uli-hp-3sJ"/>
                             <constraint firstItem="GVa-hz-SPp" firstAttribute="top" secondItem="Rm4-X8-724" secondAttribute="bottom" constant="55" id="a5o-UZ-NtL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GVa-hz-SPp" secondAttribute="trailing" constant="30" id="cN7-FG-auY"/>
+                            <constraint firstAttribute="trailing" secondItem="Q8a-hW-53z" secondAttribute="trailing" constant="16" id="e4f-rR-Ae4"/>
                             <constraint firstItem="FUn-gp-fHR" firstAttribute="top" secondItem="GVa-hz-SPp" secondAttribute="bottom" constant="8" id="f2B-A1-aTj"/>
+                            <constraint firstItem="GVa-hz-SPp" firstAttribute="leading" secondItem="try-CJ-4qq" secondAttribute="leading" constant="16" id="gR9-lt-e5y"/>
+                            <constraint firstItem="Q8a-hW-53z" firstAttribute="top" secondItem="Rm4-X8-724" secondAttribute="bottom" constant="8" id="laY-Ca-nGp"/>
+                            <constraint firstItem="Q8a-hW-53z" firstAttribute="top" secondItem="Rm4-X8-724" secondAttribute="bottom" constant="13" id="pWd-oN-TAZ"/>
                             <constraint firstItem="Id4-Xx-kTD" firstAttribute="leading" secondItem="try-CJ-4qq" secondAttribute="leading" constant="16" id="qbB-if-KYH"/>
                             <constraint firstItem="GVa-hz-SPp" firstAttribute="leading" secondItem="try-CJ-4qq" secondAttribute="leading" constant="16" id="u8S-GO-XKK"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="8vb-Io-Zge"/>
                                 <exclude reference="FuP-eL-Zeh"/>
                                 <exclude reference="LtC-MH-tgJ"/>
+                                <exclude reference="Uli-hp-3sJ"/>
                                 <exclude reference="a5o-UZ-NtL"/>
                                 <exclude reference="cN7-FG-auY"/>
                                 <exclude reference="u8S-GO-XKK"/>
+                                <exclude reference="pWd-oN-TAZ"/>
                                 <exclude reference="ANk-LG-a8m"/>
                                 <exclude reference="LlX-be-HAH"/>
                                 <exclude reference="f2B-A1-aTj"/>
@@ -562,6 +580,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="u7M-wv-XfV"/>
+        <segue reference="P42-8E-1h3"/>
     </inferredMetricsTieBreakers>
 </document>

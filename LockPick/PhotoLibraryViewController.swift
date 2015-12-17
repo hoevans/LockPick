@@ -16,6 +16,7 @@ class PhotoLibraryViewController: UIViewController, UIImagePickerControllerDeleg
         
     }
     
+    var dummy = 0
     let imagePicker = UIImagePickerController()
     var images: [UIImage] = []
     var clickedImage: UIImage? = nil
@@ -45,6 +46,32 @@ class PhotoLibraryViewController: UIViewController, UIImagePickerControllerDeleg
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("goback"), name: UIApplicationDidEnterBackgroundNotification, object: nil)
         
+        photoLibrary.reloadData()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        images.removeAll(keepCapacity: true)
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        
+        for var index = 1; index <= 100; ++index{
+            
+            var dummy: String = "image[" + String(index) + "].jpg"
+            
+            var getImage = paths.stringByAppendingPathComponent(dummy)
+            
+            var checkValidation = NSFileManager.defaultManager()
+            
+            if checkValidation.fileExistsAtPath(getImage) {
+                
+                images.append(UIImage(contentsOfFile: getImage)!)
+                
+            }
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,10 +92,22 @@ class PhotoLibraryViewController: UIViewController, UIImagePickerControllerDeleg
             
             images.append(pickedImage)
             
+            var dummy: String = "image[" + String(images.count) + "].jpg"
+            
+            let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+            
+            var getImage = paths.stringByAppendingPathComponent(dummy)
+            
+            var checkValidation = NSFileManager.defaultManager()
+            
+            UIImageJPEGRepresentation(pickedImage, 1.0).writeToFile(getImage, atomically: true)
+            
 
         }
         
         photoLibrary.reloadData()
+        
+        
         
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -93,9 +132,11 @@ class PhotoLibraryViewController: UIViewController, UIImagePickerControllerDeleg
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+        dummy = indexPath.row
+        
         clickedImage = images[indexPath.row] 
         
-        performSegueWithIdentifier("toViewPhoto", sender: images[indexPath.row])
+        performSegueWithIdentifier("toViewPhoto", sender: nil)
         
     }
     
@@ -113,6 +154,12 @@ class PhotoLibraryViewController: UIViewController, UIImagePickerControllerDeleg
             var vc = segue.destinationViewController as? PhotoViewController
             
             vc?.image = clickedImage
+            
+            vc?.index = dummy
+            
+            vc?.array = images
+            
+            vc?.photoLibrary = photoLibrary
             
         }
     }
